@@ -1,0 +1,36 @@
+PAANO I-UPLOAD ANG PORTFOLIO WEBSITE SA GITHUB (libre)
+=======================================================
+
+A. GUMAWA NG GITHUB ACCOUNT (ikaw mismo)
+1. Pumunta sa https://github.com/signup
+2. Gamitin ang email mo. Username: "christiansorio" kung available
+   (ito ang magiging link mo: christiansorio.github.io)
+3. I-verify ang email.
+
+B. GUMAWA NG REPOSITORY (lalagyan ng website)
+1. Sa github.com, i-click ang "+" sa taas-kanan, tapos "New repository".
+2. Repository name: <username mo>.github.io
+   Halimbawa: christiansorio.github.io   (dapat eksakto, maliit na letra)
+3. Piliin ang "Public". Huwag i-check ang iba. I-click ang "Create repository".
+
+C. I-UPLOAD ANG FILES
+1. Sa bagong repository page, i-click ang link na "uploading an existing file".
+2. Buksan ang folder na ito: D:\REMOTION\portfolio-site
+3. I-select ang LAHAT ng laman (Ctrl + A): index.html, style.css, site.js,
+   portfolio.js, at ang "media" folder. I-drag papunta sa GitHub page.
+   (OK lang kung kasama itong txt file.)
+4. Hintayin matapos mag-upload, tapos i-click ang green na "Commit changes".
+
+D. I-ON ANG WEBSITE
+1. Sa repository, pumunta sa "Settings", tapos "Pages" (nasa kaliwa).
+2. Sa "Build and deployment": Source = "Deploy from a branch",
+   Branch = "main", folder = "/ (root)". I-click ang "Save".
+3. Maghintay ng 1 hanggang 3 minuto, tapos buksan ang https://<username mo>.github.io
+
+E. KAPAG MAY BAGO KANG VIDEO
+- Sabihin mo lang kay Claude, siya ang mag-a-update ng files.
+- Siguraduhin na naka-"Anyone with the link can view" ang video sa Google Drive.
+- Para i-upload ang bagong version: ulitin ang step C (papalitan nito ang lumang files).
+
+F. LINKEDIN BUTTON
+- Ibigay mo kay Claude ang LinkedIn link mo para lumabas ang LinkedIn button sa Contact.
