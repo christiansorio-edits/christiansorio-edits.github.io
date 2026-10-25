@@ -20,5 +20,12 @@ const PORTFOLIO = [
   {"id": "173iUn_FIQIRK0oIzBatKHRDsh8BXvUKK", "group": "design", "label": "Infographic", "kind": "image", "title": "Infographic #1", "ratio": 1.0},
   {"id": "1agGpLdv2xP3mriTEumPp7ZXYA98nwiyQ", "group": "design", "label": "Infographic", "kind": "image", "title": "Infographic #2", "ratio": 1.0},
   {"id": "13hbb5w80YKI_bgVD26cDLEFA4X_KURSW", "group": "design", "label": "Illustration", "kind": "image", "title": "Digital Illustration #1", "ratio": 0.833},
-  {"id": "1V4RF3W3tp6eXqb5UEMvWE1X0l4Z3Of9p", "group": "design", "label": "Illustration", "kind": "image", "title": "Digital Illustration #2", "ratio": 1.0}
+  {"id": "1V4RF3W3tp6eXqb5UEMvWE1X0l4Z3Of9p", "group": "design", "label": "Illustration", "kind": "image", "title": "Digital Illustration #2", "ratio": 1.0},
+  // Graphics kept on the site itself (the graphics folder): "src" = full size, "thumb" = small preview
+  {"id": "thumbnail-ai", "group": "graphics", "label": "Thumbnail", "kind": "image", "title": "YouTube Thumbnail: AI / Tech", "ratio": 1.778, "src": "graphics/thumbnail-ai.jpg", "thumb": "graphics/thumbnail-ai-sm.jpg"},
+  {"id": "thumbnail-money", "group": "graphics", "label": "Thumbnail", "kind": "image", "title": "YouTube Thumbnail: Money / Business", "ratio": 1.778, "src": "graphics/thumbnail-money.jpg", "thumb": "graphics/thumbnail-money-sm.jpg"},
+  {"id": "ad-hikari-serum", "group": "graphics", "label": "Static Ad", "kind": "image", "title": "Static Ad: Hikari 9in1 Miracle Serum (spec ad)", "ratio": 0.8, "src": "graphics/ad-hikari-serum.jpg", "thumb": "graphics/ad-hikari-serum-sm.jpg"},
+  {"id": "ad-coffee", "group": "graphics", "label": "Static Ad", "kind": "image", "title": "Static Ad: Coffee Brand", "ratio": 0.8, "src": "graphics/ad-coffee.jpg", "thumb": "graphics/ad-coffee-sm.jpg"},
+  {"id": "carousel-editing", "group": "graphics", "label": "Carousel", "kind": "carousel", "title": "IG Carousel: 3 Editing Tricks (swipe)", "ratio": 0.8, "thumb": "graphics/carousel-editing-1-sm.jpg", "slides": [1, 2, 3, 4, 5].map((n) => `graphics/carousel-editing-${n}.jpg`)},
+  {"id": "carousel-realestate", "group": "graphics", "label": "Carousel", "kind": "carousel", "title": "IG Carousel: Real Estate Tips (swipe)", "ratio": 0.8, "thumb": "graphics/carousel-realestate-1-sm.jpg", "slides": [1, 2, 3, 4, 5].map((n) => `graphics/carousel-realestate-${n}.jpg`)}
 ];

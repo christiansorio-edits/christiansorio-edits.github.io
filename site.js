@@ -21,6 +21,9 @@ const STYLES = [
   { label: "AI Hook", name: "AI Hooks (No Talking Head)", text: "Scroll-stopping AI hooks without a talking head." },
   { label: "AI Pixar 3D", name: "AI Pixar-Style 3D", text: "Animated 3D characters that stay consistent from shot to shot." },
   { label: "Motion Graphics", name: "Motion Graphics", text: "Kinetic type and animated graphics for promos and Reels." },
+  { label: "Thumbnail", name: "YouTube Thumbnails", text: "Bold, trending thumbnails built to get the click." },
+  { label: "Static Ad", name: "Static Ads", text: "Clean, on-brand ad creatives for Facebook and Instagram." },
+  { label: "Carousel", name: "IG Carousels", text: "Swipeable carousels that teach, build trust and sell." },
   { label: "Infographic", name: "Infographics", text: "Clear, colorful visuals that explain at a glance." },
   { label: "Illustration", name: "Digital Illustration", text: "Custom illustrated artwork and portraits." },
   { label: "AI Claymation", name: "AI Claymation", text: "A stop-motion clay look, made with AI." },
@@ -38,9 +41,9 @@ STYLES.forEach((s, i) => {
   const row = g.querySelector(".group-items");
   works.forEach((p) => {
     const el = document.createElement("button");
-    el.className = "item " + p.kind;
+    el.className = "item " + (p.kind === "carousel" ? "image" : p.kind) + (p.ratio > 1.2 ? " wide" : "");
     el.innerHTML =
-      `<img src="media/thumbs/${p.id}.jpg" alt="${p.title}" loading="lazy">` +
+      `<img src="${p.thumb || `media/thumbs/${p.id}.jpg`}" alt="${p.title}" loading="lazy">` +
       `<span class="play"></span>`;
     el.addEventListener("click", () => openItem(p));
     row.appendChild(el);
@@ -48,13 +51,23 @@ STYLES.forEach((s, i) => {
   groups.appendChild(g);
 });
 
-// Lightbox: videos play from Google Drive, images show full size
+// Lightbox: videos play from Google Drive, images show full size, carousels swipe through their slides
 function openItem(p) {
   frame.style.setProperty("--r", p.ratio);
-  frame.innerHTML =
-    p.kind === "video"
-      ? `<iframe src="https://drive.google.com/file/d/${p.id}/preview" allow="autoplay; fullscreen" allowfullscreen></iframe>`
+  if (p.kind === "video") {
+    frame.innerHTML = `<iframe src="https://drive.google.com/file/d/${p.id}/preview" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
+  } else if (p.kind === "carousel") {
+    frame.innerHTML =
+      `<div class="slides">${p.slides.map((s, i) => `<img src="${s}" alt="${p.title} slide ${i + 1}">`).join("")}</div>` +
+      `<button class="nav-btn prev" aria-label="Previous slide">‹</button><button class="nav-btn next" aria-label="Next slide">›</button>`;
+    const strip = frame.querySelector(".slides");
+    frame.querySelector(".prev").onclick = () => strip.scrollBy({ left: -strip.clientWidth, behavior: "smooth" });
+    frame.querySelector(".next").onclick = () => strip.scrollBy({ left: strip.clientWidth, behavior: "smooth" });
+  } else {
+    frame.innerHTML = p.src
+      ? `<img src="${p.src}" alt="${p.title}">`
       : `<img src="https://drive.google.com/thumbnail?id=${p.id}&sz=w2000" alt="${p.title}" onerror="this.src='media/thumbs/${p.id}.jpg'">`;
+  }
   caption.textContent = p.title;
   lightbox.classList.add("open");
   document.body.style.overflow = "hidden";
