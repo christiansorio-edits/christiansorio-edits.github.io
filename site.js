@@ -25,6 +25,7 @@ const STYLES = [
   { label: "AI UGC", name: "AI UGC", text: "Realistic AI creators presenting products." },
   { label: "AI Hook", name: "AI Hooks (No Talking Head)", text: "Scroll-stopping AI hooks without a talking head." },
   { label: "AI Pixar 3D", name: "AI Pixar-Style 3D", text: "Animated 3D characters that stay consistent from shot to shot." },
+  { label: "AI Drama", name: "AI Drama", text: "Short AI drama stories with consistent characters, emotion and captions." },
   { label: "Motion Graphics", name: "Motion Graphics", text: "Kinetic type and animated graphics for promos and Reels." },
   { label: "Thumbnail", name: "YouTube Thumbnails", text: "Bold, trending thumbnails built to get the click." },
   { label: "Static Ad", name: "Static Ads", text: "Clean, on-brand ad creatives for Facebook and Instagram." },
@@ -44,7 +45,7 @@ STYLES.forEach((s) => {
   g.className = "group reveal";
   g.innerHTML =
     `<div class="group-head"><span class="group-num">CH ${pad(channel)}</span>` +
-    `<div><h3>${s.name}</h3><p>${s.text}</p></div></div><div class="group-items"></div>`;
+    `<div><h3>${s.name}</h3><p>${s.text}</p></div></div><div class="group-items${works.length === 3 ? " three" : ""}"></div>`;
   const row = g.querySelector(".group-items");
   works.forEach((p) => {
     const el = document.createElement("button");
